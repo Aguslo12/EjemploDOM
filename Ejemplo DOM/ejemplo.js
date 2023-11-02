@@ -47,14 +47,19 @@ titulo2.addEventListener("click", clickTitulo);*/
 const form = document.querySelector("#formulario");
 
 const enviarFormulario = (event) => {
-    //console.log(event.bubbles);
-    event.preventDefault();
+  //console.log(event.bubbles);
+  event.preventDefault();
 
-    const {name, email, password} = event.target;
+  const { name, email, password } = event.target;
 
-    console.log(name.value, email.value, password.value);
+  console.log(name.value, email.value, password.value);
 
-    if(name.value.length === 0) alert("El nombre no es valido");
+  
+  if (name.value.length === 0) {
+    alert("El nombre no es valido");
+  }
+  if (email.value.length === 0) alert("El mail no es válido");
+  if (password.value.length === 0) alert("La contraseña no es valida ");
 };
 
 form.addEventListener("submit", enviarFormulario);
